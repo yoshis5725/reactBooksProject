@@ -1,12 +1,12 @@
 // -- imports --
-import { useContext, useState } from "react";
-import BooksContext from "../Context/Books";
+import { useState } from "react";
+import useBooksContext from "../Hooks/useBooksContext";
 import BookEdit from "./BookEdit";
 
 
 function BookShow({ book }) {
-    // getting access to the delete function from the provider
-    const { deleteBookById } = useContext(BooksContext);
+    // getting access to the delete function from the custom hook
+    const { deleteBookById } = useBooksContext();
 
     // vars
     var content = <h3>{book.title}</h3>

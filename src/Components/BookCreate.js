@@ -1,11 +1,11 @@
 // -- imports --
-import { useState, useContext } from "react";
-import BooksContext from "../Context/Books";
+import { useState } from "react";
+import useBooksContext from "../Hooks/useBooksContext";
 
 
 function BookCreate() {
-    // getting access to the function from the provider
-    const { createBook } = useContext(BooksContext); 
+    // getting access to the function from the custom hook
+    const { createBook } = useBooksContext(); 
 
     // states
     const [title, setTitle] = useState('');

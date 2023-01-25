@@ -1,12 +1,11 @@
 // -- imports --
 import BookShow from './BookShow';
-import { useContext } from 'react';
-import BooksContext from '../Context/Books';
+import useBooksContext from '../Hooks/useBooksContext';
 
 
 function BookList() {
-    // getting access to the books array from the provider
-    const { books } = useContext(BooksContext);
+    // getting access to the books array from the custom hook
+    const { books } = useBooksContext();
 
 
     // mapping over the array of books

@@ -1,11 +1,11 @@
 // -- imports --
-import { useContext, useState } from "react";
-import BooksContext from "../Context/Books";
+import { useState } from "react";
+import useBooksContext from "../Hooks/useBooksContext";
 
 
 function BookEdit({ book, onSubmit }) {
-    // getting access to the edit function from the provider
-    const { editBookById } = useContext(BooksContext);
+    // getting access to the edit function from the custom hook
+    const { editBookById } = useBooksContext();
 
     // state
     const [ title, setTitle ] = useState(book.title);
