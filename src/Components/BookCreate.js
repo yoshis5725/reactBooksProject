@@ -1,8 +1,12 @@
-// imports
-import { useState } from "react";
+// -- imports --
+import { useState, useContext } from "react";
+import BooksContext from "../Context/Books";
 
 
-function BookCreate({ onCreate }) {
+function BookCreate() {
+    // getting access to the function from the provider
+    const { createBook } = useContext(BooksContext); 
+
     // states
     const [title, setTitle] = useState('');
 
@@ -16,7 +20,7 @@ function BookCreate({ onCreate }) {
     // handling submission - sending the title back to the parent - App.js
     const handleSubmit = (event) => {
         event.preventDefault();
-        onCreate(title);
+        createBook(title);
         setTitle('');
     }
 
